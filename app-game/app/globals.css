@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+x.input-value {
+  display: block;
+  width: 200px !important;
+}
+x.input-value .label {
+  font-size: 12px !important;
+}
+x.input-value input {
+  width: 40px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  /* border-radius: 5px; */
+}
+.chart-main{
+  position: relative;
+}
+.chart-value {
+  position:absolute;
+  top:20%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+/****************** */
+.line {
+  fill: none;
+  stroke: #ffab00;
+  stroke-width: 3;
+}
+
+.overlay {
+fill: none;
+pointer-events: all;
+}
+
+/* Style the dots by assigning a fill and stroke */
+.dot {
+  fill: #ffab00;
+  stroke: red;
+}
+
+.dot.focus {
+fill: #ffab00;
+stroke: steelblue;
+}
+
+path.line {
+stroke-dasharray: 1750;
+stroke-dashoffset: 0;
+animation: dash 1.5s linear;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1750;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
